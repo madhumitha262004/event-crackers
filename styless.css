@@ -1,0 +1,56 @@
+.form-section {
+  max-width: 50rem;
+  margin: 10rem auto;
+  padding: 2rem;
+  background: #333;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-section h2 {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-section form input,
+.form-section form select {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.form-section form input::placeholder,
+.form-section form select {
+  color: #ccc;
+
+}
+
+.form-section form .btn {
+  width: 100%;
+  margin-top: 2rem;
+}
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background: var(--theme-color); 
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #3417b8; 
+  }
+  
+

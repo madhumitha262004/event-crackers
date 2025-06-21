@@ -1,0 +1,374 @@
+<!DOCTYPE html> 
+<html lang="en">  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Organization</title>
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styless.css" />
+  <link rel="stylesheet" href="search.css" />
+
+  </head>
+<body>
+
+  <!-- header section starts  -->
+  <header class="header">
+    <img src="bestlogo.jpg" alt="Event Logo" style="height: 80px;" />
+    <nav class="navbar">
+      <a href="#home"><i class="fa-solid fa-house"></i></a>
+      <a href="#service"><i class="fa-solid fa-wrench"></i></a>
+      <a href="#about"><i class="fa-solid fa-address-card"></i></a>
+      <a href="#gallery"><i class="fa-solid fa-images"></i></a>
+      <a href="price.html"><i class="fa-solid fa-comments-dollar"></i></a>
+      <a href="review.html"><i class="fa-solid fa-thumbs-up"></i></a>
+      <a href="contact.html"><i class="fa-solid fa-phone-flip"></i></a>
+      <a href="calender.html" title="Calendar"><i class="fa-solid fa-calendar-days"></i></a>
+      <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
+      <a href="signup.html"><i class="fa-solid fa-user-plus"></i></a>
+      <a href="registeration.html"><i class="fa-solid fa-pen-to-square"></i></a>
+    </nav>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+  </header>
+  <section class="home" id="home">
+    <div class="content">
+      <head>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search pages like..." onkeydown="if(event.key==='Enter'){handleSearch()}" />
+          <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
+        </div>
+      
+      </head>
+      <h3>
+        Get ready for an event to remember! <br />
+        <span> Events Crackers!</span>
+      </h3>
+      <a href="#contact" class="btn">get quote</a>
+    </div>
+
+    <div class="swiper-container home-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="party.jpg" alt="" /></div>
+        <div class="swiper-slide"><img src="brithcake.jpg" alt="" /></div>
+        <div class="swiper-slide"><img src="gallery10.jpg" alt="" /></div>
+        <div class="swiper-slide"><img src="home4.jpg" alt="" /></div>
+        <div class="swiper-slide"><img src="home9.jpg" alt="" /></div>
+        <div class="swiper-slide"><img src="event.jpg" alt="" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service" id="service">
+    <h1 class="heading">our <span>services</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <i class="fas fa-envelope"></i>
+        <h3>invitation card design</h3>
+        <p>
+          Our designers create unique and attractive invitation cards based on your ideas and preferences.  
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-photo-video"></i>
+        <h3>photos and videos</h3>
+        <p>
+          Our skilled photographers have an eye for detail and a knack for capturing candid moments, 
+          creating timeless photographs that tell your unique story.
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-music"></i>
+        <h3>entertainment</h3>
+        <p>
+          Make your event truly unforgettable with our diverse range of entertainment services.
+           Whether you're planning a corporate function, wedding reception. 
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-car"></i>
+        <h3>enent vehicles</h3>
+        <p>
+          Arrive at your special occasion in style with our premium event vehicles services. 
+          Whether you're planning a wedding, corporate event.
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>venue selection</h3>
+        <p>
+          Finding the perfect venue sets the stage for a truly remarkable event. Let us take the stress out of venue selection 
+        and help you discover the ideal setting for your special occasion.
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fas fa-birthday-cake"></i>
+        <h3>food catering</h3>
+        <p>
+          Treat your guests to a culinary experience they'll never forget 
+          with our bespoke food catering services.
+          the service of providing food and beverages for events,
+           gatherings, or meals in a non-traditional setting.
+        </p>
+      </div>
+
+       <div class="box">
+        <i class="fa-solid fa-envelopes-bulk"></i>
+        <h3>post Event evaluation</h3>
+        <p>
+         After the event, it's important to evaluate its success and identify areas for improvement. 
+         This can involve gathering feedback from attendees and analyzing data to determine the event's effectiveness.
+        </p>
+      </div>
+
+      <div class="box">
+        <i class="fa-solid fa-champagne-glasses"></i>
+        <h3>event design and execution</h3>
+        <p>
+          This involves creating a visually appealing and engaging event experience for attendees. 
+          It includes designing the layout of the venue, 
+          managing lighting, sound, and visual effects
+          
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <h1 class="heading"><span>about</span> us</h1>
+
+    <div class="row">
+      <div class="image">
+        <img src="about.jpg" alt="" />
+      </div>
+      <div class="content">
+        <h3> Celebrate life's greatest milestones with style.</h3>
+        <p>
+          Celebrating milestones with style involves acknowledging and recognizing important life events with appreciation, 
+          creativity, and personal touches. This includes celebrating achievements, anniversaries, and other significant moments in a 
+          meaningful way, whether through small gestures or larger events. 
+          It can be about creating lasting memories, acknowledging efforts, and fostering a sense of joy and accomplishment. .
+        </p>
+        <p>
+          Celebrating life's milestones with style means marking significant achievements and events
+           in a memorable and meaningful way, often with a touch of elegance or sophistication. 
+           This can involve personal celebrations like graduations, weddings, or professional milestones, or broader
+            life events like birthdays, anniversaries, or even the loss of a loved one. 
+        </p>
+        <a href="#" class="btn">reach us</a>
+      </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <h1 class="heading">our <span>gallery</span></h1>
+
+    <div class="box-container">
+      <div class="box">
+        <img src="gallery1.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery1.jpg" class="fas fa-eye"  target="_blank"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery2.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery2.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery3.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery3.jpg"  class="fas fa-eye" target="_blank"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery4.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery4.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery5.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery5.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery6.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery6.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery9.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery9.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="gallery8.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery8.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+
+        <div class="box">
+        <img src="gallery.jpg" alt="" />
+        <h3 class="title">best events</h3>
+        <div class="icons">
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-share"></a>
+          <a href="gallery.jpg" target="_blank" class="fas fa-eye"></a>
+        </div>
+
+
+      
+  </section>
+
+  
+  
+  
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>branches</h3>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+      </div>
+
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> price </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> reivew </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> calender </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> login </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> signup </a>   
+        <a href="#"> <i class="fas fa-arrow-right"></i> register </a>  
+      </div>
+
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +91-88277-64410 </a>
+        <a href="#"> <i class="fas fa-phone"></i> +91-88277-64410 </a>
+        <a href="#"> <i class="fas fa-envelope"></i> SriJan@gmail.com </a>
+        <a href="#"> <i class="fas fa-envelope"></i> SriJan@gmail.com </a>
+        <a href="#">
+          <i class="fas fa-map-marker-alt"></i> bangalore, india - 560054
+        </a>
+      </div>
+
+      <div class="box">
+        <h3>follow us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+      </div>
+    </div>
+
+    <div class="credit">
+      created by <span>Events Crackers</span> | all rights reserved
+    </div>
+  </section>
+
+  <div class="theme-toggler" id="themeToggler">
+    <div class="toggle-btn" id="toggleBtn">
+      <i class="fas fa-cog"></i>
+    </div>
+    <div class="buttons">
+      <div class="theme-btn" style="background: #f39c12;"></div>
+      <div class="theme-btn" style="background: #3498db;"></div>
+      <div class="theme-btn" style="background: #9b59b6;"></div>
+    </div>
+  </div>
+  
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    function handleSearch() {
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
+
+      const sectionMap = {
+        "home": "#home",
+        "service": "#service",
+        "about":"#about",
+        "gallery": "#gallery"
+      };
+
+      const pageMap = {
+        "price": "price.html",
+        "client": "review.html",
+        "contact": "contact.html",
+        "calendar": "calender.html",
+        "calender": "calender.html",
+        "login": "login.html",
+        "signup": "signup.html",
+        "register": "registeration.html"
+      };
+
+      if (sectionMap[input]) {
+        window.location.href = "index.html" + sectionMap[input]
+      } else if (pageMap[input]) {
+        window.location.href = pageMap[input];
+      } else {
+        alert("Page not found. Try: search pages etc.");
+      }
+    }
+  </script>
+
+</body>
+</html>

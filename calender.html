@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+  <link rel="stylesheet" href="styless.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .calendar-section {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #686666;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calendar-header select {
+      padding: 8px 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .calendar-day, .calendar-date {
+      padding: 10px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      font-weight: bold;
+    }
+
+    .calendar-day {
+      background: var(--theme-color);
+      color: white;
+    }
+
+    .calendar-date:hover {
+      background-color: var(--theme-color);
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .footer .box-container .box a i {
+      color: var(--theme-color);
+      transition: all 0.3s ease;
+    }
+
+    .footer .box-container .box a:hover i {
+      color: var(--theme-color);
+      padding-right: 1.5rem;
+    }
+
+    .footer .box-container .box a:hover {
+      color: var(--theme-color);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  </style>
+  </head>
+<body>
+  <section class="calendar-section">
+    <div class="calendar-header">
+      <select id="monthSelect" onchange="changeMonth()">
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5">June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
+      </select>
+
+      <select id="yearSelect" onchange="changeMonth()"></select>
+    </div>
+    <div class="calendar-grid" id="calendar"></div>
+  </section>
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>branches</h3>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> bangalore </a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> hyderabad </a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> delhi </a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> kolkata </a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> chennai </a>
+      </div>
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="index.html"><i class="fas fa-arrow-right"></i> home </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> service </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> about </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> gallery </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> price </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> review </a>
+        <a href="#"><i class="fas fa-arrow-right"></i> contact </a>
+        <a href="#"> <i class="fas fa-arrow-right"></i> calender </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> login </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> signup </a>   
+          <a href="#"> <i class="fas fa-arrow-right"></i> register </a>  
+       
+      </div>
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"><i class="fas fa-phone"></i> +91-88277-64410 </a>
+        <a href="#"><i class="fas fa-envelope"></i> SriJan@gmail.com </a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> bangalore, india - 560054 </a>
+      </div>
+      <div class="box">
+        <h3>follow us</h3>
+        <a href="#"><i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"><i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"><i class="fab fa-instagram"></i> instagram </a>
+        <a href="#"><i class="fab fa-linkedin-in"></i> linkedin </a>
+      </div>
+    </div>
+    <div class="credit">
+      created by <span>Events Crackers</span> | all rights reserved
+    </div>
+  </section>
+  <script>
+    const calendar = document.getElementById("calendar");
+    const monthSelect = document.getElementById("monthSelect");
+    const yearSelect = document.getElementById("yearSelect");
+
+    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    
+    for (let y = 2020; y <= 2035; y++) {
+      const option = document.createElement("option");
+      option.value = y;
+      option.textContent = y;
+      yearSelect.appendChild(option);
+    }
+
+    function renderCalendar(month, year) {
+      calendar.innerHTML = "";
+
+
+      weekdays.forEach(day => {
+        const dayDiv = document.createElement("div");
+        dayDiv.className = "calendar-day";
+        dayDiv.innerText = day;
+        calendar.appendChild(dayDiv);
+      });
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const totalDays = new Date(year, month + 1, 0).getDate();
+
+  
+      for (let i = 0; i < firstDay; i++) {
+        calendar.appendChild(document.createElement("div"));
+      }
+
+      
+      for (let d = 1; d <= totalDays; d++) {
+        const dateDiv = document.createElement("div");
+        dateDiv.className = "calendar-date";
+        dateDiv.innerText = d;
+        dateDiv.addEventListener("click", () => {
+          alert(`You clicked: ${d} ${monthNames[month]} ${year}`);
+        });
+        calendar.appendChild(dateDiv);
+      }
+
+      
+      monthSelect.value = month;
+      yearSelect.value = year;
+    }
+
+    function changeMonth() {
+      currentMonth = parseInt(monthSelect.value);
+      currentYear = parseInt(yearSelect.value);
+      renderCalendar(currentMonth, currentYear);
+    }
+
+    
+    renderCalendar(currentMonth, currentYear);
+  </script>
+</body>
+</html>

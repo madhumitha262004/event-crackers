@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Reviews - Events Crackers</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+
+  
+  <section class="review" id="review">
+    <h1 class="heading">client's <span>review</span></h1>
+
+    <div class="review-slider swiper-container">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide box">
+          <i class="fas fa-quote-right"></i>
+          <div class="user">
+            <img src="img1.jpg" alt="" />
+            <div class="user-info">
+              <h3>nayana</h3>
+              <span>happy customer</span>
+            </div>
+          </div>
+          <p>
+            A client review is a piece of feedback from a satisfied customer about their experience with a product, 
+            service, or company. It's a valuable tool for businesses to build trust, 
+            improve their reputation, and gain new customers. 
+          </p>
+        </div>
+
+        <div class="swiper-slide box">
+          <i class="fas fa-quote-right"></i>
+          <div class="user">
+            <img src="img2.jpg" alt="" />
+            <div class="user-info">
+              <h3>lisa</h3>
+              <span>happy customer</span>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+            dolor dicta cum. Eos beatae eligendi, magni numquam nemo sed ut
+            corrupti, ipsam iure nisi unde et assumenda perspiciatis
+            voluptatibus nihil.
+          </p>
+        </div>
+
+        <div class="swiper-slide box">
+          <i class="fas fa-quote-right"></i>
+          <div class="user">
+            <img src="img3.jpg" alt="" />
+            <div class="user-info">
+              <h3>mary</h3>
+              <span>happy customer</span>
+            </div>
+          </div>
+          <p>
+            Client reviews and client check-ins provide the feedback you need and offer essential
+            information to keep your relationship working well. With a client review, you
+            understand the current status, and upcoming plans and strategies.
+          </p>
+        </div>
+
+        <div class="swiper-slide box">
+          <i class="fas fa-quote-right"></i>
+          <div class="user">
+            <img src="img4.jpg" alt="" />
+            <div class="user-info">
+              <h3>rose</h3>
+              <span>happy customer</span>
+            </div>
+          </div>
+          <p>
+            A process where a business evaluates feedback from its customers regarding its services or products. 
+            This review helps companies understand their strengths and weaknesses, 
+            allowing them to improve and grow.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <section class="footer">
+      <div class="box-container">
+
+        <div class="box">
+          <h3>branches</h3>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> hyderabad </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> delhi </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> kolkata </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> chennai </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="index.html"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> service </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> about </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> gallery </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> price </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> review </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> contact </a>
+          <a href="calendar.html"> <i class="fas fa-arrow-right"></i> calendar </a>
+          <a href="login.html"> <i class="fas fa-arrow-right"></i> login </a>
+          <a href="signup.html"> <i class="fas fa-arrow-right"></i> signup </a>
+          <a href="registration.html"> <i class="fas fa-arrow-right"></i> register </a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +91-88277-64410 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> SriJan@gmail.com </a>
+          <a href="#"> <i class="fas fa-map-marker-alt"></i> bangalore, india - 560054 </a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+        </div>
+      </div>
+
+      <div class="credit">
+        created by <span>Events Crackers</span> | all rights reserved
+      </div>
+    </section>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  
+  <script>
+    var swiper = new Swiper(".review-slider", {
+      loop: true,
+      grabCursor: true,
+      spaceBetween: 20,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  </script>
+
+</body>
+</html>

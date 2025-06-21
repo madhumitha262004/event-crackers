@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Checkout</title>
+    <script src="https://js.stripe.com/v3/">
+    const stripe = require('stripe')('YOUR_STRIPE_SECRET_KEY');
+const express = require('express');
+const app = express();
+app.use(express.static('.'));
+app.post('/charge', async (req, res) => {
+    try {
+        const token = req.body.stripeToken;
+        const charge = await stripe.charges.create({
+            amount: 1000, // Amount in cents
+            currency: 'usd',
+            description: 'Event Catering Services',
+            source: token,
+        });
+        res.send('Payment successful');
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+app.listen(3000, () => console.log('Server running on port 3000'));
+</script>
+<style>
+    .A{
+        max-width: 30%;
+        height: 300px;
+        background-color: rgb(233, 232, 235);
+        margin-left: 500px;
+        margin-top: 100px;
+        border-radius: 20px;
+        box-shadow: 0px 10px 16px 0px;
+    }
+    form{
+        margin-left: 30px;
+    }
+    .A h1{
+        text-align: center;
+    }
+    .form-row{
+       font-family: arial;
+       font-size: 20px;
+       margin-top: 20px;
+    }
+    .btn{
+        margin-top: 50px;
+        width: 100px;
+        height: 30px;
+    }
+</style>
+</head>
+<body>
+    <div class="A">
+        <h1>Payment Checkout</h1><hr>
+    <form id="payment-form">
+        <div class="form-row">
+            <label for="card-element">
+                Debit or Credit Card
+            </label>
+            <div id="card-element">
+                <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+        </div>
+        <button type="submit" class="btn">Pay Now</button>
+    </form>
+    </div>
+    <script>
+        var Stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY');
+        var elements = stripe.elements();
+        var cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            stripe.createToken(cardElement).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server.
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+        function stripeTokenHandler(token) {
+            // Add token to the form and submit
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+            // Submit the form
+            form.submit();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Registration</title>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  
+  <link rel="stylesheet" href="styless.css" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    #map {
+      height: 300px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer .box-container .box a i {
+      color: var(--theme-color);
+      transition: all 0.3s ease;
+    }
+
+    .footer .box-container .box a:hover {
+      color: var(--theme-color);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .footer .box-container .box a:hover i {
+      color: var(--theme-color);
+      padding-right: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <section class="form-section">
+    <h2>Event Registration</h2>
+    <form id="eventForm">
+      <input type="text" id="fullName" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+
+      <select id="eventType" required>
+        <option value="">Select Event</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Party">Party</option>
+        <option value="Musical">Musical</option>
+        <option value="Food">Food</option>
+      </select>
+
+      <label>Select Event Location:</label>
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27989146604!2d-74.25986548164967!3d40.69767006340598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5b2f5a733%3A0x4c2589eeb399f20a!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1718430967617!5m2!1sen!2sin"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  
+  <footer>
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>branches</h3>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> bangalore</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> hyderabad</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> delhi</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> kolkata</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> chennai</a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#"><i class="fas fa-arrow-right"></i> home</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> service</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> about</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> gallery</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> price</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> review</a>
+          <a href="#"><i class="fas fa-arrow-right"></i> contact</a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> calender </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> login </a>
+          <a href="#"> <i class="fas fa-arrow-right"></i> signup </a>   
+          <a href="#"> <i class="fas fa-arrow-right"></i> register </a>  
+       
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"><i class="fas fa-phone"></i> +91-88277-64410</a>
+          <a href="#"><i class="fas fa-phone"></i> +91-88277-64410</a>
+          <a href="#"><i class="fas fa-envelope"></i> SriJan@gmail.com</a>
+          <a href="#"><i class="fas fa-envelope"></i> SriJan@gmail.com</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> bangalore, india - 560054</a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"><i class="fab fa-facebook-f"></i> facebook</a>
+          <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+          <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+          <a href="#"><i class="fab fa-linkedin-in"></i> linkedin</a>
+        </div>
+      </div>
+
+      <div class="credit">
+        created by <span>Events Crackers</span> | all rights reserved
+      </div>
+    </section>
+  </footer>
+
+  
+  <script>
+    document.getElementById("eventForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const eventType = document.getElementById("eventType").value;
+
+      if (!fullName || !email || !eventType) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert("Event registration successful!\nName: " + fullName + "\nEmail: " + email + "\nEvent: " + eventType);
+    });
+  </script>
+
+</body>
+</html>
